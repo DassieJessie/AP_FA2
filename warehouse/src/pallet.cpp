@@ -3,7 +3,7 @@
 Pallet::Pallet(std::string itemName, int itemCapacity, int itemCount) :
     itemName(itemName), itemCapacity(itemCapacity), itemCount(itemCount) {}
 
-Pallet::Pallet():
+Pallet::Pallet() :
     itemName(""), itemCapacity(0), itemCount(0) {}
 
 
