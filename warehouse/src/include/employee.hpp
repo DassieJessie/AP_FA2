@@ -13,12 +13,11 @@ class Employee {
         
         // Getters & Setter Class variables
         std::string getName();
-        void setName();
 
         bool getBusy();
         void setBusy(bool busy);
 
         bool getForkliftCertificate();
-        void setForkliftCertificate();
+        void setForkliftCertificate(bool forkliftCertificate);
 
 };
