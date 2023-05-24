@@ -1,7 +1,8 @@
 #pragma once
+#include "icontainer.hpp"
 #include <string>
 
-class Pallet {
+class Pallet : public IContainer {
     private:
         int itemCount; // Only mutable through taking and putting
         std::string itemName; // Only mutable if empty
@@ -15,7 +16,7 @@ class Pallet {
         // Getters class variables
         std::string getitemName();
         int getitemCount();
-        
+
         int getRemainingSpace();
         bool reallocateEmptyPallet(std::string itemName, int itemCapacity);
         bool takeOne();
