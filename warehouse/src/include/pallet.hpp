@@ -17,6 +17,9 @@ class Pallet : public IContainer {
         std::string getitemName();
         int getitemCount();
 
+        bool isEmpty() const override;
+        bool isFull() const override;
+
         int getRemainingSpace();
         bool reallocateEmptyPallet(std::string itemName, int itemCapacity);
         bool takeOne();
