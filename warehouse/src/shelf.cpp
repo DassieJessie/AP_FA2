@@ -14,3 +14,24 @@ bool Shelf::swapPallet(int slot, int slot2) {
     std::swap(pallets[slot], pallets[slot2]);
     return true;
 }
+
+bool Shelf::isEmpty() const {
+    for (Pallet pallet : pallets) {
+        if (!pallet.isEmpty()) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool Shelf::isFull() const {
+    for (Pallet pallet : pallets) {
+        if (!pallet.isFull()) {
+            return false;
+        }
+    }
+
+    return true;
+}
+

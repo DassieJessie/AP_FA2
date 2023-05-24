@@ -11,5 +11,7 @@ class Shelf : public IContainer {
         Shelf();
         
         bool swapPallet(int slot, int slot2);
+        bool isEmpty() const override;
+        bool isFull() const override;
 
 };
