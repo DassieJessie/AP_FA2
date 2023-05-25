@@ -7,6 +7,8 @@ For this project we'll be implementing the UML structer found below.
 
 In a warehouse you can store shelves with pallets on them. These pallets are handled by qualified employees. 
 
+![UML](https://i.imgur.com/gwHqOQV.png)
+
 ## How to run
 Download project
 > To run main, please change your makefile project outline:
@@ -120,3 +122,4 @@ New Total: 5
 
 ## Proof of validation
 ### Test Warehouse
+![base test cases](https://i.imgur.com/BIlBIxC.png)
