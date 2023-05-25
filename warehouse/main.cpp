@@ -48,6 +48,7 @@ int main(void){
     std::cout << "\n===== Warehouse Check =====\n" << 
         dassiesWarehouse << "\n";
 
+    dassiesWarehouse.rearrangeShelf(s2);
     // Rearrange shelves
     std::cout << "Sorted shelf:\n" << s2;
 
@@ -56,5 +57,19 @@ int main(void){
         "\nCherry Red Keyboards: " << std::to_string(dassiesWarehouse.getItemAmount("Cherry Red Keyboards")) <<
         "\nHyperX Headsets: " << std::to_string(dassiesWarehouse.getItemAmount("HyperX Headsets")) << "\n";
 
+    std::cout << "\n===== Pick up Stock =====\n";
+    dassiesWarehouse.pickItems("Cherry Red Keyboards", 20);
+    std::cout << "20 Cherry Red Keyboards \nNew Total: " << 
+        std::to_string(dassiesWarehouse.getItemAmount("Cherry Red Keyboards")) << "\n";
+    
+    dassiesWarehouse.pickItems("Cherry Red Keyboards", 200);
+    std::cout << "\n200 Cherry Red Keyboards \nNew Total: " << 
+        std::to_string(dassiesWarehouse.getItemAmount("Cherry Red Keyboards")) << " - Cannot pick up 200 items\n";
+
+    dassiesWarehouse.pickItems("Cherry Red Keyboards", 50);
+    std::cout << "\n50 Cherry Red Keyboards \nNew Total: " << 
+        std::to_string(dassiesWarehouse.getItemAmount("Cherry Red Keyboards")) << "\n";
+    
+    
     return 0;
 }
