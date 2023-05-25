@@ -45,11 +45,16 @@ int main(void){
     dassiesWarehouse.addEmployee(e2);
 
     //Check out warehouse
-    std::cout << "\n===== Warehouse  Check =====\n" << dassiesWarehouse << "\n";
+    std::cout << "\n===== Warehouse Check =====\n" << 
+        dassiesWarehouse << "\n";
 
     // Rearrange shelves
-    std::cout << std::to_string(dassiesWarehouse.rearrangeShelf(s2));
     std::cout << "Sorted shelf:\n" << s2;
+
+    //Check how much product we have in total
+    std::cout << "\n===== Check Stock =====" <<
+        "\nCherry Red Keyboards: " << std::to_string(dassiesWarehouse.getItemAmount("Cherry Red Keyboards")) <<
+        "\nHyperX Headsets: " << std::to_string(dassiesWarehouse.getItemAmount("HyperX Headsets")) << "\n";
 
     return 0;
 }
