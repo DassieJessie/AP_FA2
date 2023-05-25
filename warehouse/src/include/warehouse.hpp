@@ -14,6 +14,7 @@ class Warehouse {
         void addEmployee(Employee employee);
         void addShelf(Shelf shelf);
         bool hasAvailableCertifiedEmployee();
+        bool hasAvailableEmployee();
         bool rearrangeShelf(Shelf& shelf);
         int getItemAmount(std::string itemName);
         bool pickItems(std::string itemName, int itemCount);

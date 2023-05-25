@@ -20,6 +20,15 @@ bool Warehouse::hasAvailableCertifiedEmployee() {
     return false;
 }
 
+bool Warehouse::hasAvailableEmployee() {
+    for (Employee employee : employees) {
+        if (!employee.getBusy()){
+            return true;
+        }
+    }
+    return false;
+}
+
 bool Warehouse::rearrangeShelf(Shelf& shelf) {
     if (!hasAvailableCertifiedEmployee()) {
         return false;
@@ -58,7 +67,7 @@ int Warehouse::getItemAmount(std::string itemName) {
 
 bool Warehouse::pickItems(std::string itemName, int itemCount) {
     // Validate pick count
-    if (getItemAmount(itemName) < itemCount || itemCount <= 0) {
+    if (getItemAmount(itemName) < itemCount || itemCount <= 0 || !hasAvailableEmployee()) {
         return false;
     }
 
