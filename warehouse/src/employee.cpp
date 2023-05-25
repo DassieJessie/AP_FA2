@@ -2,7 +2,7 @@
 
 // Employee constructor
 Employee::Employee(std::string name, bool forkliftCertificate) :
-    name(name), forkliftCertificate(forkliftCertificate) {}
+    name(name), busy(false), forkliftCertificate(forkliftCertificate) {}
         
 // Getters & Setter Class variables
 std::string Employee::getName() {
