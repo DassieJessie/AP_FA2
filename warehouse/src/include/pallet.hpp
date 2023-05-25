@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "icontainer.hpp"
 #include <string>
 
@@ -24,4 +25,6 @@ class Pallet : public IContainer {
         bool reallocateEmptyPallet(std::string itemName, int itemCapacity);
         bool takeOne();
         bool putOne();
+
+        friend std::ostream& operator<<(std::ostream& out, Pallet& pallet);
 };

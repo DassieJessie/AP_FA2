@@ -51,3 +51,9 @@ bool Pallet::putOne() {
     }
     return false;
 }
+
+std::ostream& operator<<(std::ostream& out, Pallet& pallet) {
+    out << "Item name: " << pallet.getItemName() <<
+        "\nItem count: " << pallet.getItemCount() <<
+        "\nRemaining space: " << pallet.getRemainingSpace();
+}

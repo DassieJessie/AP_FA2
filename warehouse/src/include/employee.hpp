@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <string>
 
 class Employee {
@@ -19,5 +20,7 @@ class Employee {
 
         bool getForkliftCertificate();
         void setForkliftCertificate(bool forkliftCertificate);
+
+        friend std::ostream& operator<<(std::ostream& out, Employee& employee);
 
 };

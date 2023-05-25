@@ -35,5 +35,15 @@ bool Shelf::isFull() const {
     return true;
 }
 
+std::ostream& operator<<(std::ostream& out, Shelf& shelf) {
+    // Pallets
+    out << "Shelf pallets: \n";
+    for (Pallet pallet : shelf.pallets) {
+        out << pallet << "\n";
+    }
+
+    return out;
+}
+
 Shelf::~Shelf() {}
 

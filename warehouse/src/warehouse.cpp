@@ -75,3 +75,34 @@ bool Warehouse::pickItems(std::string itemName, int itemCount) {
 
     return true;
 }
+
+int Warehouse::getEmployeeTotal() {
+    return employees.size();
+}
+
+int Warehouse::getShelfTotal() {
+    return shelves.size();
+}
+
+std::ostream& operator<<(std::ostream& out, Warehouse& warehouse) {
+    // Get Employees + Shelves
+    if (warehouse.getEmployeeTotal() == 0) {
+        out << "No employees yet \n";
+    } else {
+        out << "Warehouse Employees: \n";
+        for (Employee employee : warehouse.employees) {
+            out << employee << "\n";
+        }
+    }
+
+    if (warehouse.getShelfTotal() == 0) {
+        out << "No shelves yet \n";
+    } else {
+        out << "Warehouse Shelves: \n";
+        for (Shelf shelf : warehouse.shelves) {
+            out << shelf << "\n";
+        }
+    }
+
+    return out;
+}
