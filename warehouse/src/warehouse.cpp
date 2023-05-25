@@ -11,17 +11,17 @@ void Warehouse::addShelf(Shelf shelf) {
     shelves.push_back(shelf);
 }
 
-bool Warehouse::hasForkliftCeritificate() {
+bool Warehouse::hasAvailableCertifiedEmployee() {
     for (Employee employee : employees) {
-        if (!employee.getForkliftCertificate()){
-            return false;
+        if (employee.getForkliftCertificate() && !employee.getBusy()){
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 bool Warehouse::rearrangeShelf(Shelf& shelf) {
-    if (!hasForkliftCeritificate()) {
+    if (!hasAvailableCertifiedEmployee()) {
         return false;
     }
 
@@ -29,7 +29,7 @@ bool Warehouse::rearrangeShelf(Shelf& shelf) {
     // Sort from left to right
     for (int i = 0; i < lenPallets - 1; i++) {
         int minIndex = i;
-        for (int j = 0 ; j < lenPallets -1; j++) {
+        for (int j = i + 1 ; j < lenPallets; j++) {
             if (shelf.pallets[minIndex].getItemCount() > shelf.pallets[j].getItemCount()) {
                 minIndex = j;
             }
