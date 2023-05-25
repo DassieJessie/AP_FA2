@@ -22,12 +22,20 @@ int main(void){
     Pallet p6("Laptop Cases", 35, 35);
     Pallet p7("Windows Laptops", 100, 100);
 
+    Pallet p8("Cherry Red Keyboards", 25, 25);
+    Pallet p9("HyperX Headsets", 20, 20);
+    Pallet p10("Logitech Headsets", 20, 20);
+    Pallet p11("Action Headsets", 10, 10);
+
     // Storing all items on shelves
     Shelf s1(p1, p2, p3);
     dassiesWarehouse.addShelf(s1);
 
     Shelf s2(p4, p5, p6, p7);
     dassiesWarehouse.addShelf(s2);
+
+    Shelf s3(p8, p9, p10, p11);
+    dassiesWarehouse.addShelf(s3);
 
     // Hiring employees to take care of our stock
     Employee e1("Dassie", true);
@@ -39,6 +47,9 @@ int main(void){
     //Check out warehouse
     std::cout << "\n===== Warehouse  Check =====\n" << dassiesWarehouse << "\n";
 
+    // Rearrange shelves
+    std::cout << std::to_string(dassiesWarehouse.rearrangeShelf(s2));
+    std::cout << "Sorted shelf:\n" << s2;
 
     return 0;
 }
