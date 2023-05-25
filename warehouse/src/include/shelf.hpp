@@ -9,6 +9,10 @@ class Shelf : public IContainer {
         std::array<Pallet, 4> pallets;
 
         // Shelf constructor
+        Shelf(Pallet p1, Pallet p2, Pallet p3, Pallet p4);
+        Shelf(Pallet p1, Pallet p2, Pallet p3);
+        Shelf(Pallet p1, Pallet p2);
+        Shelf(Pallet p1);
         Shelf();
         
         bool swapPallet(int slot, int slot2);
