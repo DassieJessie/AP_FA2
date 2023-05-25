@@ -121,5 +121,8 @@ New Total: 5
 ````
 
 ## Proof of validation
-### Test Warehouse
+### Base Tests Warehouse
 ![base test cases](https://i.imgur.com/BIlBIxC.png)
+
+### Item Pick Tests Warehouse
+![Item Pick test cases](https://i.imgur.com/Do3RxmN.png)
