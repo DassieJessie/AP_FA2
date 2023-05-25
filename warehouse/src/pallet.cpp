@@ -1,10 +1,10 @@
 #include "include/pallet.hpp"
 
 Pallet::Pallet(std::string itemName, int itemCapacity, int itemCount) :
-    itemName(itemName), itemCapacity(itemCapacity), itemCount(itemCount) {}
+    itemCount(itemCount), itemName(itemName), itemCapacity(itemCapacity) {}
 
 Pallet::Pallet() :
-    itemName(""), itemCapacity(0), itemCount(0) {}
+    itemCount(0), itemName(""), itemCapacity(0) {}
 
 
 std::string Pallet::getItemName() {
