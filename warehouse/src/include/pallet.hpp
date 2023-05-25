@@ -14,8 +14,8 @@ class Pallet : public IContainer {
         Pallet();
 
         // Getters class variables
-        std::string getitemName();
-        int getitemCount();
+        std::string getItemName();
+        int getItemCount();
 
         bool isEmpty() const override;
         bool isFull() const override;

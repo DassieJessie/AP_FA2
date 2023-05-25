@@ -21,7 +21,7 @@ bool Warehouse::hasForkliftCeritificate() {
 }
 
 bool Warehouse::rearrangeShelf(Shelf& shelf) {
-    if (!hasForkliftCeritificate) {
+    if (!hasForkliftCeritificate()) {
         return false;
     }
 
@@ -29,8 +29,8 @@ bool Warehouse::rearrangeShelf(Shelf& shelf) {
     // Sort from left to right
     for (int i = 0; i < lenPallets - 1; i++) {
         int minIndex = i;
-        for (int j = 0 ; i < lenPallets -1; j++) {
-            if (shelf.pallets[minIndex].getitemCount() > shelf.pallets[j].getitemCount()) {
+        for (int j = 0 ; j < lenPallets -1; j++) {
+            if (shelf.pallets[minIndex].getItemCount() > shelf.pallets[j].getItemCount()) {
                 minIndex = j;
             }
         }
@@ -38,6 +38,8 @@ bool Warehouse::rearrangeShelf(Shelf& shelf) {
             shelf.swapPallet(i, minIndex);
         }
     }
+
+    return true;
 }
 
 int Warehouse::getItemAmount(std::string itemName) {
@@ -45,8 +47,8 @@ int Warehouse::getItemAmount(std::string itemName) {
 
     for (Shelf& shelf : shelves) {
         for (Pallet& pallet : shelf.pallets) {
-            if (pallet.getitemName() == itemName) {
-                totalAvailable += pallet.getitemCount();
+            if (pallet.getItemName() == itemName) {
+                totalAvailable += pallet.getItemCount();
             }
         }
     }
@@ -62,8 +64,8 @@ bool Warehouse::pickItems(std::string itemName, int itemCount) {
 
     for (Shelf& shelf : shelves) {
         for (Pallet& pallet : shelf.pallets) {
-            if (pallet.getitemName() == itemName) {
-                while (pallet.getitemCount() > 0 && itemCount != 0) {
+            if (pallet.getItemName() == itemName) {
+                while (pallet.getItemCount() > 0 && itemCount != 0) {
                     pallet.takeOne();
                     itemCount--;
                 }

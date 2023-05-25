@@ -7,11 +7,11 @@ Pallet::Pallet() :
     itemName(""), itemCapacity(0), itemCount(0) {}
 
 
-std::string Pallet::getitemName() {
+std::string Pallet::getItemName() {
     return itemName;
 }
 
-int Pallet::getitemCount() {
+int Pallet::getItemCount() {
     return itemCount;
 }
 
