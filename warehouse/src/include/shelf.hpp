@@ -14,4 +14,7 @@ class Shelf : public IContainer {
         bool isEmpty() const override;
         bool isFull() const override;
 
+        // Shelf destructor
+        ~Shelf();
+
 };

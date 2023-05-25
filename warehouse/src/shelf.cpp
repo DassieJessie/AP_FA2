@@ -35,3 +35,5 @@ bool Shelf::isFull() const {
     return true;
 }
 
+Shelf::~Shelf() {}
+
